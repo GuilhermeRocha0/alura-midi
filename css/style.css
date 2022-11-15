@@ -1,0 +1,72 @@
+:root {
+  --gray: #aaa;
+  --red: #e93d50;
+  --dark-red: #af303f;
+  --white: #fff;
+  --light: rgb(229, 255, 0);
+
+  font-size: 62.5%;
+}
+
+body {
+  align-items: center;
+  background: linear-gradient(45deg, #a7cfdf 0%, #23538a 100%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  font-size: 1.6rem;
+}
+
+h1 {
+  color: var(--white);
+  margin-bottom: 2rem;
+  font-size: 3.2rem;
+}
+
+.keypad {
+  background: linear-gradient(to bottom, #eeeeee 0%, #cccccc 100%);
+  box-shadow: 0.6rem 0.8rem 0 0.6rem #666, 1rem 1rem 1rem #000;
+  border-radius: 3rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1rem;
+}
+
+.key {
+  background-color: var(--white);
+  border-radius: 3rem;
+  box-shadow: 0.3rem 0.3rem 0 var(--gray);
+  color: var(--red);
+  cursor: pointer;
+  height: 12rem;
+  font-size: 2.8rem;
+  font-weight: bold;
+  line-height: 12rem;
+  text-align: center;
+  width: 12rem;
+  user-select: none;
+}
+
+.key.active,
+.key:active {
+  background-color: var(--red);
+  border: 0.4rem solid var(--red);
+  box-shadow: 0.3rem 0.3rem 0 var(--dark-red) inset;
+  color: var(--white);
+  outline: none;
+}
+
+.key.focus,
+.key:focus {
+  outline: none;
+  box-shadow: 0.1rem 0.1rem 1rem var(--light);
+}
+
+.key.active:focus,
+.key:active:focus {
+  box-shadow: 0.3rem 0.3rem 0 var(--dark-red) inset,
+    0.1rem 0.1rem 1rem var(--light);
+}
